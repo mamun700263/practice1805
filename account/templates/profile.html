@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Profile{% endblock title %}
+
+{% block content %}
+
+<div class="text-center">
+<h1 >{{user.username}}</h1>
+<h5>{{user.first_name}} {{user.last_name}} </h5>
+</div>
+<div class="text-center">
+    <a href="{% url 'change_pass_with_old' %}" class="btn btn-warning">Change pass with old Pass</a>
+    <a href="{% url 'change_pass_without_old' %}" class="btn btn-danger">Change pass without old Pass</a>
+    <a href="{% url 'change_user_info' %}" class="btn btn-info">Change user informations </a>
+</div>
+{% endblock content %}

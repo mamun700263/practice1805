@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}HOME{% endblock title %}
+
+{% block content %}
+
+{% if not user.is_authenticated %}
+<div class="border w-50 m-auto justify-content-center gap-3">
+    <small>You don't have a account </small><a href="{% url 'Registration' %}" class="btn btn-primary btn-sm my-2">Sign Up</a>
+    <br>
+    <small>You have a account </small><a href="{% url 'login' %}" class="btn btn-success btn-sm ms-5 my-2">Log in</a>
+</div>
+{% endif %}
+<div class="text-center">
+    <h1>Nothid to Show in the home page</h1>
+</div>
+{% endblock content %}

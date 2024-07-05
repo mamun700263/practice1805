@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{page}}{% endblock title %}
+
+{% block content %}
+
+
+<h1 class="text-center">Welcome to {{page}}</h1>
+
+<form action="" method="post" class="w-50 m-auto">
+    {% csrf_token %}
+    {{form|crispy}}
+    <input type="submit" value="Submit" class="btn btn-primary">
+    <br>
+    {% if page == 'Registration page' %}
+    <small>Alredy have an account <a href="#">Log in</a> </small>
+    {% endif %}
+</form>
+
+
+{% endblock content %}
